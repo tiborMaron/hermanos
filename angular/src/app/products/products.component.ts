@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts()
-      .subscribe(heroes => this.products = heroes);
+      .subscribe(products => this.products = products);
   }
 
   constructor(private productService: ProductService) { }
