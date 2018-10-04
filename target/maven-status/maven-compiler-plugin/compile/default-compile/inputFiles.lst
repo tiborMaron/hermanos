@@ -1,0 +1,13 @@
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/dao/DaoUsers.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/OrderStatus.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/controller/JPAController.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/Address.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/Product.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/dao/DaoProduct.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/dao/DaoOrder.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/config/Initializer.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/dao/DaoAddress.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/Order.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/Users.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/model/ProductCategory.java
+/home/sunwalker/Codecool/4_ADVANCED/1TW/hermanos/src/main/java/com/codecool/hermanos/controller/ProductController.java
