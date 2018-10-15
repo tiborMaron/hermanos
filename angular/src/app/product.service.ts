@@ -3,20 +3,21 @@ import { Observable, of } from 'rxjs';
 import {Product} from "./product";
 import {PRODUCTS} from "./mock-products";
 import {Cart} from "./mock-cart";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private productsURL;
+  private productsURL = "http://localhost:8080/products";
+  private productURL = "http://localhost:8080/product";
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsURL);
   }
 
   getProduct(id: number): Observable<Product>{
-    return of(PRODUCTS.find(product => product.id == id));
+    return this.http.get<Product>(this.productURL,{ params: new HttpParams().append("id", id.toString())});
   }
 
   getCart(): Observable<Product[]>{

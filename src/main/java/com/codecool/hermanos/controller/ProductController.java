@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/"})
+@WebServlet(urlPatterns = {"/products"})
 public class ProductController extends HttpServlet {
 
     @Override
