@@ -1,10 +1,6 @@
 package com.codecool.hermanos.controller;
 
-import com.codecool.hermanos.config.Initializer;
-import com.codecool.hermanos.dao.DaoProduct;
-import com.codecool.hermanos.model.Product;
-import com.codecool.hermanos.model.ProductCategory;
-import com.google.gson.Gson;
+import com.codecool.hermanos.model.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -54,17 +50,5 @@ public class JPAController {
 
     public List getAllProduct() {
         return this.entityManager.createQuery("SELECT p FROM Product p").getResultList();
-    }
-
-    public static void main(String[] args) {
-        DaoProduct dp = DaoProduct.getInstance();
-        Initializer init = new Initializer(dp);
-        init.initializeProducts();
-
-        List products = dp.getAllProducts();
-        Gson gson = new Gson();
-        String productsInJson = gson.toJson(products);
-
-        System.out.println(productsInJson);
     }
 }

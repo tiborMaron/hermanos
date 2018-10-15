@@ -1,17 +1,24 @@
 package com.codecool.hermanos.config;
 
 import com.codecool.hermanos.dao.DaoProduct;
+import com.codecool.hermanos.dao.implementation.DaoProductJPA;
 import com.codecool.hermanos.model.Product;
 import com.codecool.hermanos.model.ProductCategory;
 
 public class Initializer {
     private DaoProduct pd;
 
-    public Initializer(DaoProduct pd) {
+    private Initializer(DaoProduct pd) {
         this.pd = pd;
     }
 
-    public void initializeProducts() {
+    public static void main(String[] args) {
+        DaoProduct dp = DaoProductJPA.getInstance();
+        Initializer init = new Initializer(dp);
+        init.initializeProducts();
+    }
+
+    private void initializeProducts() {
         Product product1 = new Product("Crystal Meth", "From Heisenberg's kitchen", 10.0, ProductCategory.DRUG);
         pd.addNewProduct(product1);
 

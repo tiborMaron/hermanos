@@ -1,4 +1,5 @@
 package com.codecool.hermanos.dao;
 
-public class DaoOrder {
+public interface DaoOrder {
+
 }
