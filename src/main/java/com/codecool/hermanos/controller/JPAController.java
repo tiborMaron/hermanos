@@ -37,7 +37,13 @@ public class JPAController {
 
     //=================================================================================================================
 
-    // PRODUCT
+    ///
+    /// PRODUCT ///
+    ///
+
+    public List getAllProduct() {
+        return this.entityManager.createQuery("SELECT p FROM Product p").getResultList();
+    }
 
     public Product addNewProduct(Product product) {
         this.entityManager.persist(product);
@@ -48,7 +54,20 @@ public class JPAController {
         return this.entityManager.find(Product.class, id);
     }
 
-    public List getAllProduct() {
-        return this.entityManager.createQuery("SELECT p FROM Product p").getResultList();
+    ///
+    /// USERS ///
+    ///
+
+    public List getAllUser() {
+        return this.entityManager.createQuery("SELECT u FROM Users u").getResultList();
+    }
+
+    public Users addNewUser(Users user) {
+        this.entityManager.persist(user);
+        return user;
+    }
+
+    public Users getUserByID(long id) {
+        return this.entityManager.find(Users.class, id);
     }
 }
