@@ -1,27 +1,27 @@
 <div class="form-container" (click)="onClick($event)">
   <div class="form">
     <div class="title">Sign up</div>
-    <label id="name">First Name:
+    <label id="name">Name:
       <input [(ngModel)]="user.name" placeholder="Walter White" (blur)="onBlur($event)">
     </label>
     <label id="email">Email:
       <input [(ngModel)]="user.email" placeholder="walterwhite@bluemeth.com" (blur)="onBlur($event)">
     </label>
     <label id="password">Password:
-      <input [(ngModel)]="user.password" placeholder="asd" (blur)="onBlur($event)" type="password">
+      <input [(ngModel)]="user.password" placeholder="Blu3meth123" (blur)="onBlur($event)" type="password">
     </label>
     <label id="country">Country:
       <input [(ngModel)]="user.country" placeholder="New Mexico" (blur)="onBlur($event)">
     </label>
-    <label id="zipCode">Zip code:
+    <label id="zipcode">Zip code:
       <input [(ngModel)]="user.zipcode" placeholder="87101" (blur)="onBlur($event)">
     </label>
     <label id="city">City:
       <input [(ngModel)]="user.city" placeholder="Albuquerque" (blur)="onBlur($event)">
     </label>
-    <label id="address">Address:
+    <label id="addr">Address:
       <input [(ngModel)]="user.addr" placeholder="4th Los Ranchos ST" (blur)="onBlur($event)">
     </label>
-    <button (click)="register()">Register</button>
+    <button (click)="register()"><span>Register</span></button>
   </div>
 </div>

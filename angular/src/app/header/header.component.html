@@ -2,7 +2,22 @@
 
   <img class="logo" src="../../assets/logo.png">
   <img class="logo" src="../../assets/logo-hide.png" (click)="openHeader()" [ngClass]="{'hide-img': !isHide }">
-  <a [routerLink]="[{ outlets: { credentials: ['registration'] } }]">Registration</a>
+
+  <div class="wrapper left-wrapper row">
+    <div class="col col-sm-12 col-md-6">
+      <a [routerLink]="[{ outlets: { credentials: ['registration'] } }]"><i class="fas fa-chevron-circle-down"></i>Categories</a>
+    </div>
+  </div>
+  <div class="wrapper right-wrapper row">
+    <div class="col col-sm-12 col-md-6">
+      <a [routerLink]="[{ outlets: { credentials: ['registration'] } }]"><i class="fas fa-user-plus"></i>Sign Up</a>
+    </div>
+    <div class="col col-sm-12 col-md-6">
+      <a [routerLink]="[{ outlets: { credentials: ['login'] } }]"><i class="fas fa-sign-in-alt"></i>Log In</a>
+    </div>
+  </div>
+
+
   <div class="arrow" [ngClass]="{'hide': !isHide }" (click)="openHeader()"><i class="fas fa-caret-down"></i></div>
   <div class="header-border"></div>
 </div>

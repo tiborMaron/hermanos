@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {Product} from "./product";
 import {Cart} from "./mock-cart";
+import {PRODUCTS} from "./mock-products";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 @Injectable({
@@ -13,6 +14,7 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsURL);
+    // return of (PRODUCTS);
   }
 
   getProduct(id: number): Observable<Product>{

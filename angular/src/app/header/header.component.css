@@ -57,7 +57,44 @@ img.logo {
 }
 
 .spacer {
-  height: 120px;
+  height: 140px;
 }
 
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  width: 42%;
+  height: 110px;
+}
+
+.left-wrapper {
+  left: 0;
+}
+
+.right-wrapper {
+  right: 0;
+}
+
+.col {
+  text-align: center;
+  margin: auto;
+}
+
+.col a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Chango', cursive;
+  font-size: large;
+  transition: color ease-in-out 0.1s, text-shadow ease-in-out 0.1s;
+}
+
+.col a:hover {
+  color: #fddc3f;
+  text-shadow: #d0312e 0 0 6px, #d0312e 0 0 10px, #d0312e 0 0 14px;
+}
+
+.col a i {
+  margin-right: 10px;
+}
 

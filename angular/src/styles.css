@@ -5,5 +5,7 @@ html {
 }
 
 body {
+  background: url("assets/background.jpg") fixed center;
+  background-size: cover;
   margin: 0;
 }
