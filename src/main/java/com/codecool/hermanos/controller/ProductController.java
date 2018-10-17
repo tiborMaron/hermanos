@@ -1,6 +1,7 @@
 package com.codecool.hermanos.controller;
 
 import com.codecool.hermanos.dao.DaoProduct;
+import com.codecool.hermanos.dao.implementation.DaoProductJPA;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DaoProduct dp = DaoProduct.getInstance();
+        DaoProduct dp = DaoProductJPA.getInstance();
 
         List products = dp.getAllProducts();
         Gson gson = new Gson();

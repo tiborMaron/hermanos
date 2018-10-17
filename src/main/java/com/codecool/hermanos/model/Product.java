@@ -1,10 +1,6 @@
 package com.codecool.hermanos.model;
 
-import com.codecool.hermanos.controller.JPAController;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Product {
@@ -17,16 +13,19 @@ public class Product {
     private String description;
     private double price;
 
+    private String imageName;
+
     @Enumerated(EnumType.STRING)
     private ProductCategory category;
 
     public Product() {
     }
 
-    public Product(String name, String description, double price, ProductCategory category) {
+    public Product(String name, String description, double price, String imageName, ProductCategory category) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.imageName = imageName;
         this.category = category;
     }
 
@@ -60,5 +59,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageLocation) {
+        this.imageName = imageLocation;
     }
 }
