@@ -24,7 +24,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -69,10 +68,12 @@
             <version>9.4.12.v20180830</version>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>hermanos</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -86,11 +87,13 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.12.v20180830</version>
             </plugin>
+
         </plugins>
     </build>
 </project>

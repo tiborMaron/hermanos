@@ -55,6 +55,15 @@ public class JPAController {
     }
 
     ///
+    /// ADDRESS ///
+    ///
+
+    public Address addNewAddress(Address address) {
+        this.entityManager.persist(address);
+        return address;
+    }
+
+    ///
     /// USERS ///
     ///
 
