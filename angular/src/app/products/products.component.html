@@ -1,6 +1,7 @@
 <div class="card-columns">
   <a class="card" *ngFor="let product of products" routerLink="/product/{{product.id}}">
-    <div>Name: {{product.name}}</div>
+    <div class="product-name">{{product.name}}</div>
+    <img class="product-picture" src="../../assets/hamburger.jpg">
     <div>Description: {{product.description}}</div>
     <div>Price: {{product.price}}</div>
     <div>Category: {{product.category}}</div>
