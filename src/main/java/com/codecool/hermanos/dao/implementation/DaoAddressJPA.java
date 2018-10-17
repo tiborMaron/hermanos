@@ -6,14 +6,6 @@ import com.codecool.hermanos.model.Address;
 
 public class DaoAddressJPA implements DaoAddress {
 
-    private static DaoAddressJPA daoAddr;
-    private DaoAddressJPA() {}
-
-    public static DaoAddressJPA getInstance() {
-        if (daoAddr == null) daoAddr = new DaoAddressJPA();
-        return daoAddr;
-    }
-
     @Override
     public void addNewAddress(Address address) {
         JPAController.use(jpaController -> jpaController.addNewAddress(address));
