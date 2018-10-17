@@ -1,5 +1,5 @@
 package com.codecool.hermanos.dao;
 
-public class DaoAddress {
+public interface DaoAddress {
 
 }

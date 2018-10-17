@@ -16,9 +16,6 @@ public class Users {
     private String email;
     private String password;
 
-    @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
-
     @OneToOne
     private Address address;
 
@@ -28,10 +25,10 @@ public class Users {
     public Users() {
     }
 
-    public Users(String name, String email, Date dateOfBirth, Address address) {
+    public Users(String name, String email, String password, Address address) {
         this.name = name;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
+        this.password = password;
         this.address = address;
     }
 
@@ -49,10 +46,6 @@ public class Users {
 
     public String getPassword() {
         return password;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
     }
 
     public Address getAddress() {
