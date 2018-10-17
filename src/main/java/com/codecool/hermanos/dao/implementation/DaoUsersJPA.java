@@ -8,14 +8,6 @@ import java.util.List;
 
 public class DaoUsersJPA implements DaoUsers {
 
-    private static DaoUsers du;
-    private DaoUsersJPA() {}
-
-    public static DaoUsers getInstance() {
-        if (du == null) du = new DaoUsersJPA();
-        return du;
-    }
-
     @Override
     public List getAllUsers() {
         return JPAController.use(JPAController::getAllUser);

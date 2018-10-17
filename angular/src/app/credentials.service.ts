@@ -10,8 +10,9 @@ export class CredentialsService {
   private registrationURL = "http://localhost:8080/registration";
   private loginURL = "http://localhost:8080/login";
 
-  register(user: User): void {
-    this.http.post(this.registrationURL, user);
+  register(user: User): Observable<String> {
+    console.log("lofasz");
+    return this.http.post<String>(this.registrationURL, user);
   }
 
   login(email: String, password: String): void {

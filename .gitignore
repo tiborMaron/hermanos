@@ -6,3 +6,11 @@
 src/main/resources/META-INF/persistence\.xml
 
 *.class
+
+angular/package-lock\.json
+
+angular/package\.json
+
+target/classes/META-INF/
+
+target/maven-status/maven-compiler-plugin/compile/default-compile/

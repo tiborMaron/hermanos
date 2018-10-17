@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   user: User = new User();
 
   register(): void {
-    this.credentialsService.register(this.user);
+    console.log(this.credentialsService.register(this.user).subscribe());
   }
 
   onClick($event): void {

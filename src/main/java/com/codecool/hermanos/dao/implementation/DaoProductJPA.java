@@ -8,14 +8,6 @@ import java.util.List;
 
 public class DaoProductJPA implements DaoProduct {
 
-    private static DaoProductJPA dpJPA;
-    private DaoProductJPA() {}
-
-    public static DaoProductJPA getInstance() {
-        if (dpJPA == null) dpJPA = new DaoProductJPA();
-        return dpJPA;
-    }
-
     public List getAllProducts() {
         return JPAController.use(JPAController::getAllProduct);
     }
