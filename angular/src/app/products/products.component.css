@@ -1,3 +1,12 @@
+.card-columns {
+  height: 1500px;
+  margin: 1.2rem 1.2rem 0 1.2rem;
+}
+
+.card-columns .card {
+  margin-bottom: 1.2rem;
+}
+
 .product {
   margin: 10px;
   padding: 10px;
