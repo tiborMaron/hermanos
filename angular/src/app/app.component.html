@@ -1,5 +1,16 @@
-<div class="header">Los Pollos Hermanos<i class="fas fa-shopping-cart" routerLink="cart"></i></div>
+<div id="credentials">
+  <router-outlet name="credentials"></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
+<div id="content">
+  <app-header></app-header>
 
-<div class="footer">Los Pollos Hermanos</div>
+  <router-outlet></router-outlet>
+
+
+  <div class="footer">Los Pollos Hermanos</div>
+</div>
+
+
+
+
