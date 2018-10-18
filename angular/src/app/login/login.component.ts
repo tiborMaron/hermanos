@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   credentials: Credentials = new Credentials();
 
   login(): void {
-    console.log(this.credentialsService.login(this.credentials["email"], this.credentials["password"]).subscribe());
+    console.log(this.credentialsService.login(this.credentials).subscribe());
   }
 
   onClick($event): void {

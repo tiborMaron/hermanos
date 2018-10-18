@@ -26,28 +26,33 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession httpSession = request.getSession();
         httpSession.setMaxInactiveInterval(120 * 60);
+        String resultMessage;
 
         // Parse credentials
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, String>>() {
-        }.getType();
+        Type type = new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> credentials = gson.fromJson(request.getReader(), type);
 
-        // Verify user
         String email = credentials.get("email");
-        String hashedPassword = BCrypt.hashpw(credentials.get("password"), BCrypt.gensalt());
+        String password = credentials.get("password");
 
-        Users user = daoUsers.findUserByEmail(email);
-        String resultMessage;
-        if (user != null) {
-            if (BCrypt.checkpw(user.getPassword(), hashedPassword)) {
-                httpSession.setAttribute("userID", user.getId());
-                resultMessage = "Successful login!";
-            } else {
-                resultMessage = ("Invalid password!");
-            }
+        // Get user from DB
+        Users user;
+        try {
+            user = daoUsers.findUserByEmail(email);
+        } catch (IllegalStateException e) {
+            resultMessage = "E-mail address not found!";
+            System.out.println(resultMessage);
+            response.getWriter().write(gson.toJson(resultMessage));
+            return;
+        }
+
+        // Verify user
+        if (BCrypt.checkpw(password, user.getPassword())) {
+            httpSession.setAttribute("userID", user.getId());
+            resultMessage = "Successful login: " + email;
         } else {
-            resultMessage = ("E-mail address not found!");
+            resultMessage = "Invalid password!";
         }
 
         System.out.println(resultMessage);
