@@ -26,7 +26,11 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getProduct()
+    this.getProduct();
+    setTimeout(function(){
+      document.getElementById("animate").style.opacity = "0";
+    }, 100);
+
   }
 
   addToCart(product: Product): void {
