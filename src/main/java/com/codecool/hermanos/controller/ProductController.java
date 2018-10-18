@@ -1,7 +1,9 @@
 package com.codecool.hermanos.controller;
 
 import com.codecool.hermanos.dao.DaoProduct;
+import com.codecool.hermanos.model.ProductCategory;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +21,18 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        List products = daoProduct.getAllProducts();
         Gson gson = new Gson();
+
+        String category = request.getParameter("category");
+        List products;
+
+        try {
+            ProductCategory productCategory = gson.fromJson(category, ProductCategory.class);
+            products = daoProduct.getProductsByCategory(productCategory);
+        } catch (JsonSyntaxException e) {
+            products = daoProduct.getAllProducts();
+        }
+
         String productsInJson = gson.toJson(products);
         response.getWriter().write(productsInJson);
     }
