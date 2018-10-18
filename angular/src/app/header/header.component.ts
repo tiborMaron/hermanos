@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Category} from "../category";
+import {CategoryService} from "../category.service";
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   isHide: boolean = false;
 
-  constructor() { }
+  categories: Category[];
+
+  constructor(private categoryService: CategoryService) { }
+
+  getCategories(): void {
+    this.categories = this.categoryService.getCategories()
+      .subscribe(categories => this.categories = categories)
+  }
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll);

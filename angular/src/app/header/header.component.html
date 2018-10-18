@@ -20,8 +20,11 @@
 
   <div class="arrow" [ngClass]="{'hide': !isHide }" (click)="openHeader()"><i class="fas fa-caret-down"></i></div>
   <div class="header-border"></div>
+  <div id="categories">
+    <span *ngFor="let category of categories">
+      {{category.name}}
+    </span>
+  </div>
 </div>
-<div id="categories">
 
-</div>
 <div class="spacer"></div>
