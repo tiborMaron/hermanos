@@ -54,6 +54,12 @@ public class JPAController {
         return this.entityManager.find(Product.class, id);
     }
 
+    public List getProductsByCategory(ProductCategory productCategory) {
+        return this.entityManager.createQuery("SELECT p FROM Product p WHERE p.category = :category")
+                .setParameter("category", productCategory)
+                .getResultList();
+    }
+
     ///
     /// ADDRESS ///
     ///
