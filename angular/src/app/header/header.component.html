@@ -5,7 +5,9 @@
 
   <div class="wrapper left-wrapper row">
     <div class="col col-sm-12 col-md-6">
-      <a [routerLink]="[{ outlets: { credentials: ['registration'] } }]"><i class="fas fa-chevron-circle-down"></i>Categories</a>
+        <button (click)="showCategories()" (blur)="hideCategories()">
+          <span><i class="fas fa-chevron-circle-down" id="openCategoriesArrow"></i>Categories</span>
+        </button>
     </div>
   </div>
   <div class="wrapper right-wrapper row">
@@ -20,11 +22,15 @@
 
   <div class="arrow" [ngClass]="{'hide': !isHide }" (click)="openHeader()"><i class="fas fa-caret-down"></i></div>
   <div class="header-border"></div>
+
+
   <div id="categories">
     <span *ngFor="let category of categories">
-      {{category.name}}
+      <a [routerLink]="['/products']" [queryParams]="{category: category}">{{category}}</a>
     </span>
   </div>
+
+
 </div>
 
 <div class="spacer"></div>

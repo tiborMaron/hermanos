@@ -10,8 +10,8 @@ import {Category} from "./category";
 export class CategoryService {
   private categoryURL = "http://localhost:8080/category";
 
-  getCategories(): Observable<Category[]> {
-    return this.http.get<String>(this.categoryURL);
+  getCategories(): Observable<String[]> {
+    return this.http.get<String[]>(this.categoryURL);
   }
 
   constructor(private http: HttpClient) { }

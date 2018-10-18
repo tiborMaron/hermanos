@@ -14,8 +14,8 @@ export class CredentialsService {
     return this.http.post<String>(this.registrationURL, user);
   }
 
-  login(email: String, password: String): void {
-    this.http.post(this.registrationURL, [email, password]);
+  login(email: String, password: String): Observable<String> {
+    return this.http.post<String>(this.registrationURL, [email, password]);
   }
 
   constructor(private http: HttpClient) { }

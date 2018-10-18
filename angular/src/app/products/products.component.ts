@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../product";
 import {ProductService} from "../product.service";
 import {AppRoutingModule} from "../app-routing.module";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-products',
@@ -14,6 +16,7 @@ export class ProductsComponent implements OnInit {
 
   openDetails($event, id: number, navigate = this.navigate, router = this.router): void{
     let path = $event.path;
+    let elementIndex;
     for (let index in path){
       if (path[index].className == "card"){
         path[index].style.transform = "scale(8)";
@@ -24,7 +27,7 @@ export class ProductsComponent implements OnInit {
 
     setTimeout(function(){
       navigate(id, router);
-    }, 200);
+    }, 190);
 
   }
 
@@ -41,10 +44,21 @@ export class ProductsComponent implements OnInit {
       .subscribe(products => this.products = products);
   }
 
-  constructor(private productService: ProductService, private router: Router) { }
+  getProductsByCategory(category: string): void {
+    this.productService.getProductsByCategory(category)
+      .subscribe(products => this.products = products);
+  }
+
+  constructor(private productService: ProductService, private router: Router,
+              private http: HttpClient,
+              private route: ActivatedRoute,
+              private location: Location) { }
 
   ngOnInit() {
-    this.getProducts()
+    this.route.queryParams.subscribe(param => this.getProductsByCategory(param["category"]));
+    // console.log(this.route.queryParams["category"])
+    // if (this.route.queryParams)
+    // this.getProducts()
   }
 
 }
