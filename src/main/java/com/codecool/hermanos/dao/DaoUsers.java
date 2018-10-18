@@ -8,4 +8,5 @@ public interface DaoUsers {
     List getAllUsers();
     void addNewUser(Users user);
     Users findUserByID(long id);
+    Users findUserByEmail(String email);
 }
