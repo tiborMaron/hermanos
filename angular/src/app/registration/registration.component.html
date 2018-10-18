@@ -1,5 +1,6 @@
 <div class="form-container" (click)="onClick($event)">
   <div class="form">
+    <a class="cancel" (click)="cancel()"><i class="fas fa-times"></i></a>
     <div class="title">Sign up</div>
     <label id="name">Name:
       <input [(ngModel)]="user.name" placeholder="Walter White" (blur)="onBlur($event)">

@@ -5,6 +5,7 @@ import {promise} from "selenium-webdriver";
 import Promise = promise.Promise;
 import {style} from "@angular/animations";
 import {forEach} from "@angular/router/src/utils/collection";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-registration',
@@ -28,6 +29,10 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
+  cancel() {
+    this._location.back();
+  }
+
   onBlur($event): void {
     if(!this.user[$event.target.parentElement.id]){
       $event.target.parentElement.style.paddingRight = "0";
@@ -35,7 +40,7 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-  constructor(private credentialsService: CredentialsService) { }
+  constructor(private credentialsService: CredentialsService, private _location: Location) { }
 
   ngOnInit() {
     document.getElementById("content").style.overflow = "hidden";
