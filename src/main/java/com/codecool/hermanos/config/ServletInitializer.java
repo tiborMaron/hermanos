@@ -22,7 +22,7 @@ public class ServletInitializer implements ServletContextListener {
         EnumSet<ProductCategory> categories = EnumSet.allOf(ProductCategory.class);
 
         ServletContext context = sce.getServletContext();
-        context.addServlet("Product", new ProductController(daoProduct, categories)).addMapping("/products");
+        context.addServlet("Product", new ProductController(daoProduct)).addMapping("/products");
         context.addServlet("ProductPage", new ProductPageController(daoProduct)).addMapping("/product");
         context.addServlet("Registration", new RegistrationController(daoUsers, daoAddress)).addMapping("/registration");
         context.addServlet("Categories", new CategoryController(categories)).addMapping("/category");
