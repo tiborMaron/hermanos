@@ -4,6 +4,8 @@ import {Product} from "./product";
 import {Cart} from "./mock-cart";
 import {PRODUCTS} from "./mock-products";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Location} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,14 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsURL);
     // return of (PRODUCTS);
+  }
+
+  getProductsByCategory(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>(this.productsURL, {
+      params: {
+        category: category
+      }
+    });
   }
 
   getProduct(id: number): Observable<Product>{
@@ -29,5 +39,7 @@ export class ProductService {
     Cart.getInstance().addToCart(product);
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 }

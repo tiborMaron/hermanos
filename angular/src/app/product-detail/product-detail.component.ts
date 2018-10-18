@@ -31,6 +31,10 @@ export class ProductDetailComponent implements OnInit {
       document.getElementById("animate").style.opacity = "0";
     }, 100);
 
+    setTimeout(function(){
+      document.getElementById("animate").style.display = "none";
+    }, 200);
+
   }
 
   addToCart(product: Product): void {

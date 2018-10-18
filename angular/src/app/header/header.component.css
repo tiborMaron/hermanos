@@ -81,7 +81,20 @@ img.logo {
   margin: auto;
 }
 
-.col a {
+.col button {
+  background: none;
+  color: white;
+  border: none;
+}
+
+button:focus {outline:0;}
+
+#openCategoriesArrow {
+  transform: rotate(-90deg);
+  transition: transform ease-in-out 0.4s;
+}
+
+.col a, .col {
   text-decoration: none;
   color: white;
   font-family: 'Chango', cursive;
@@ -89,17 +102,22 @@ img.logo {
   transition: color ease-in-out 0.1s, text-shadow ease-in-out 0.1s;
 }
 
-.col a:hover {
+.col a:hover, .col button:hover {
   color: #fddc3f;
   text-shadow: #d0312e 0 0 6px, #d0312e 0 0 10px, #d0312e 0 0 14px;
 }
 
-.col a i {
+.col a i, .col i {
   margin-right: 10px;
 }
 
 #categories {
+  transform: scaleY(0);
   position: absolute;
-  
+  top: 140px;
+  width: 100vw;
+  min-height: 50px;
+  background-color: black;
+  transition: transform ease-in-out 0.4s
 }
 

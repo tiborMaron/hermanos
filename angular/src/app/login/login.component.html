@@ -1,0 +1,12 @@
+<div class="form-container" (click)="onClick($event)">
+  <div class="form">
+    <div class="title">Log In</div>
+    <label id="email">Email:
+      <input [(ngModel)]="credentials.email" placeholder="walterwhite@bluemeth.com" (blur)="onBlur($event)">
+    </label>
+    <label id="password">Password:
+      <input [(ngModel)]="credentials.password" placeholder="Blu3meth123" (blur)="onBlur($event)" type="password">
+    </label>
+    <button (click)="login()"><span>Log In</span></button>
+  </div>
+</div>
