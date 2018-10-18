@@ -22,4 +22,9 @@ public class DaoUsersJPA implements DaoUsers {
     public Users findUserByID(long id) {
         return JPAController.use(jpaController -> jpaController.getUserByID(id));
     }
+
+    @Override
+    public Users findUserByEmail(String email) {
+        return JPAController.use(jpaController -> jpaController.findUserByEmail(email));
+    }
 }

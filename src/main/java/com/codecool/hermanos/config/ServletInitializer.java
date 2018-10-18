@@ -25,6 +25,7 @@ public class ServletInitializer implements ServletContextListener {
         context.addServlet("Product", new ProductController(daoProduct, categories)).addMapping("/products");
         context.addServlet("ProductPage", new ProductPageController(daoProduct)).addMapping("/product");
         context.addServlet("Registration", new RegistrationController(daoUsers, daoAddress)).addMapping("/registration");
+        context.addServlet("Login", new LoginController(daoUsers)).addMapping("/login");
         context.addServlet("Categories", new CategoryController(categories)).addMapping("/category");
     }
 }

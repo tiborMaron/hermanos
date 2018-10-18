@@ -85,4 +85,10 @@ public class JPAController {
     public Users getUserByID(long id) {
         return this.entityManager.find(Users.class, id);
     }
+
+    public Users findUserByEmail(String email) {
+        return (Users) this.entityManager.createQuery("SELECT u FROM Users u WHERE u.email = :email")
+                .setParameter("email", email)
+                .getSingleResult();
+    }
 }
