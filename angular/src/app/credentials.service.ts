@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {User} from "./user";
+import {Credentials} from "./credentials";
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class CredentialsService {
     return this.http.post<String>(this.registrationURL, user);
   }
 
-  login(email: String, password: String): Observable<String> {
-    return this.http.post<String>(this.registrationURL, [email, password]);
+  login(credentials: Credentials): Observable<String> {
+    return this.http.post<String>(this.loginURL, credentials);
   }
 
   constructor(private http: HttpClient) { }
