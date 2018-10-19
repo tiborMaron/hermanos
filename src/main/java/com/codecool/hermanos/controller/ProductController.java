@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class ProductController extends HttpServlet {
         if (categories.contains(productCategory)) products = daoProduct.getProductsByCategory(productCategory);
         else products = daoProduct.getAllProducts();
 
+        Collections.shuffle(products);
         String productsInJson = gson.toJson(products);
         response.getWriter().write(productsInJson);
     }
