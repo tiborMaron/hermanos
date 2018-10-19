@@ -1,9 +1,8 @@
 <div class="card-columns">
   <a class="card" *ngFor="let product of products" (click)="openDetails($event, product.id)">
     <div class="product-name">{{product.name}}</div>
-    <img class="product-picture" src="../../assets/hamburger.jpg">
-    <div>Description: {{product.description}}</div>
-    <div>Price: {{product.price}}</div>
-    <div>Category: {{product.category}}</div>
+    <img class="product-picture" src="../../assets/product-pictures/product{{product.id}}.jpg">
+    <div class="product-description">{{product.description}}</div>
+    <div class="product-price">Only {{product.price | currency}}</div>
   </a>
 </div>
