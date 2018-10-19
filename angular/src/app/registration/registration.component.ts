@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
 
   register(): void {
     console.log(this.credentialsService.register(this.user).subscribe());
+    this._location.back();
   }
 
   onClick($event): void {

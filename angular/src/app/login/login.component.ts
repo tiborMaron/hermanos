@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log(this.credentialsService.login(this.credentials).subscribe());
+    this._location.back();
   }
 
   cancel() {
