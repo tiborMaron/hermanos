@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CredentialsService} from "../credentials.service";
 import {User} from "../user";
 import {Credentials} from "../credentials";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,11 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log(this.credentialsService.login(this.credentials).subscribe());
+    this._location.back();
+  }
+
+  cancel() {
+    this._location.back();
   }
 
   onClick($event): void {
@@ -32,7 +38,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private credentialsService: CredentialsService) { }
+  constructor(private credentialsService: CredentialsService, private _location: Location) { }
 
   ngOnInit() {
     document.getElementById("content").style.overflow = "hidden";

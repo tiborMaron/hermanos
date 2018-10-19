@@ -1,5 +1,5 @@
 .card-columns {
-  height: 1500px;
+  min-height: 100vh;
   margin: 1.2rem 1.2rem 0 1.2rem;
 }
 
@@ -41,4 +41,20 @@ a.card:hover {
 
 img.product-picture {
   width: 100%;
+}
+
+.product-description {
+  font-size: larger;
+  text-align: justify;
+  margin: 10px;
+  color: white;
+}
+
+.product-price {
+  font-size: smaller;
+  color: white;
+  padding: 5px 10px 5px;
+  background-color: #d0312e;
+  text-align: right;
+  font-family: 'Chango', cursive;
 }

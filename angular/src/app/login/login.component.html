@@ -1,5 +1,6 @@
 <div class="form-container" (click)="onClick($event)">
   <div class="form">
+    <a class="cancel" (click)="cancel()"><i class="fas fa-times"></i></a>
     <div class="title">Log In</div>
     <label id="email">Email:
       <input [(ngModel)]="credentials.email" placeholder="walterwhite@bluemeth.com" (blur)="onBlur($event)">
