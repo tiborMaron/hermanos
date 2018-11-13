@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../product";
-import {ProductService} from "../product.service";
+import {Product} from "../../model/product";
+import {ProductService} from "../../service/product.service";
 import {AppRoutingModule} from "../app-routing.module";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
@@ -49,7 +49,8 @@ export class ProductsComponent implements OnInit {
       .subscribe(products => this.products = products);
   }
 
-  constructor(private productService: ProductService, private router: Router,
+  constructor(private productService: ProductService,
+              private router: Router,
               private http: HttpClient,
               private route: ActivatedRoute,
               private location: Location) { }

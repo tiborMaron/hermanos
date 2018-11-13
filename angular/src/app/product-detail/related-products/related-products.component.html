@@ -1,0 +1,3 @@
+<div class="related-products row">
+  <app-related-product class="related-product col-sm-12 col-md-4" *ngFor="let relatedProduct of relatedProducts" [product]="relatedProduct" (click)="openDetails($event, relatedProduct.id)"></app-related-product>
+</div>

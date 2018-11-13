@@ -8,3 +8,142 @@
   opacity: 100;
   transition: opacity ease-in-out 0.2s;
 }
+
+.row {
+  margin: unset;
+}
+
+.content {
+  margin: 2.5%;
+  width: 95%;
+  border: 3px solid #d0312e;
+  border-radius: 0.25rem;
+  background-color: #39455d;
+
+}
+
+.col {
+  padding: 0;
+}
+
+.product-picture {
+  width: 100%;
+}
+
+.product-details {
+  padding: 0 20px 0 20px;
+}
+
+.product-detail {
+  margin-top: 20px;
+  color: white;
+  width: 100%;
+  text-align: justify;
+}
+
+.product-name {
+  text-align: center;
+  font-family: 'Chango', cursive;
+  font-size: xx-large;
+  color: #fddc3f;
+  text-shadow: #000000 0 0 4px, #000000 0 0 6px;
+}
+.product-price {
+  color: white;
+
+}
+
+.product-description {
+  font-size: larger;
+}
+
+.allergens-calories {
+
+  margin-right: 0;
+  margin-left: 0;
+  text-align: center;
+  border: 1px solid #d0312e;
+  border-radius: 0.25rem;
+}
+
+.product-allergens-title {
+  width: 100%;
+  display: table;
+  height: 30%
+}
+
+.product-allergens-title div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.product-calories {
+  width: 100%;
+  display: table;
+  position: absolute;
+  bottom: 0;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: #d0312e;
+  border-radius: 0.25rem;
+  height: 70%
+}
+
+.product-calories div {
+  font-size: medium;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.product-calories div .cal {
+  font-size: x-large;
+  margin-top: 20px;
+}
+
+.price-cart {
+  padding: 10px;
+  background-color: #d0312e;
+  width: 100%;
+  color: white;
+}
+
+.product-price {
+  font-size: x-large;
+  font-family: 'Chango', cursive;
+  color: #fddc3f;
+  text-shadow: #000000 0 0 4px, #000000 0 0 6px;
+}
+
+.add-to-card-edit {
+  font-weight: bolder;
+  margin-top: 3px;
+  font-size: larger;
+  display: inline-block;
+  float: right;
+  border: 1px solid #39455d;
+  border-radius: 0.25rem;
+}
+
+.add-to-card-edit .amount {
+  /*font-family: 'Chango', cursive;*/
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  /*color: #fddc3f;*/
+  /*text-shadow: #000000 0 0 4px, #000000 0 0 6px;*/
+}
+
+.add-to-card-edit .total-price {
+  text-align: center;
+  display: inline-block;
+  width: 170px;
+}
+
+.add-to-card-edit button {
+  color: white;
+  border: none;
+  background-color: #39455d;
+  cursor: pointer;
+}

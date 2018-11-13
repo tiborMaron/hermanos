@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../user";
-import {CredentialsService} from "../credentials.service";
+import {User} from "../../model/user";
+import {CredentialsService} from "../../service/credentials.service";
 import {promise} from "selenium-webdriver";
 import Promise = promise.Promise;
 import {style} from "@angular/animations";

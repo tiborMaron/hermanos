@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CredentialsService} from "../credentials.service";
-import {User} from "../user";
-import {Credentials} from "../credentials";
+import {CredentialsService} from "../../service/credentials.service";
+import {User} from "../../model/user";
+import {Credentials} from "../../model/credentials";
 import { Location } from '@angular/common';
 
 @Component({

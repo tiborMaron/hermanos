@@ -1,0 +1,35 @@
+.related-product {
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  background-color: #39455d;
+  border: 3px solid #d0312e;
+  border-radius: 0.25rem;
+  transition: transform ease-in-out 0.2s;
+}
+
+.related-product:hover {
+  transform: scale(1.05);
+}
+
+.product-name {
+  margin-top: 13px;
+  text-align: center;
+  font-family: 'Chango', cursive;
+  font-size: large;
+  color: #fddc3f;
+  text-shadow: #000000 0 0 4px, #000000 0 0 6px;
+}
+
+.product-price {
+  margin-top: 13px;
+  color: white;
+}
+
+.col-5 {
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}

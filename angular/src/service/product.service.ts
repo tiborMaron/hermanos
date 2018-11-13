@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {Product} from "./product";
-import {Cart} from "./mock-cart";
-import {PRODUCTS} from "./mock-products";
+import {Product} from "../model/product";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Location} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
@@ -32,11 +30,11 @@ export class ProductService {
   }
 
   getCart(): Observable<Product[]>{
-    return of (Cart.getInstance().products)
+    return of (null)
   }
 
   addProductToCart(product: Product): void {
-    Cart.getInstance().addToCart(product);
+
   }
 
   constructor(private http: HttpClient) {
