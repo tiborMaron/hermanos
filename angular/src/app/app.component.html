@@ -1,20 +1,6 @@
-<!--<a [routerLink]="[{ outlets: { credentials: ['registration'] } }]" id="signupnow">-->
-  <!--<img src="assets/signupnow.png">-->
-<!--</a>-->
+<app-authorization *ngIf="true"></app-authorization>
+<app-signup-now></app-signup-now>
 
-<div id="credentials">
-  <router-outlet name="credentials"></router-outlet>
-</div>
-
-<div id="content">
-  <app-header></app-header>
-
-  <router-outlet></router-outlet>
-
-</div>
-
-
-
-
-
-
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

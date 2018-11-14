@@ -1,3 +1,10 @@
+.full-page-wrapper {
+  z-index: 9999;
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+}
+
 .form-container {
   overflow: auto;
   height: 100vh;
@@ -63,9 +70,7 @@ input {
   right: 0;
   top: 0;
   height: 100%;
-  float: right;
   width: 0;
-  overflow: visible;
   transition: width ease-in-out 0.35s;
   border: 1px solid #d0312e;
 }
@@ -95,3 +100,5 @@ button span{
   width: 100%;
   background-color: #d0312e;
 }
+
+

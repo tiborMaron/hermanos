@@ -1,0 +1,26 @@
+<div class="form">
+  <a class="cancel" (click)="cancel()"><i class="fas fa-times"></i></a>
+  <div class="title">Sign up</div>
+  <label id="name" appInputFieldAnimation>Name:
+    <input [(ngModel)]="user.name" placeholder="Walter White">
+  </label>
+  <label id="email" appInputFieldAnimation>Email:
+    <input [(ngModel)]="user.email" placeholder="walterwhite@bluemeth.com">
+  </label>
+  <label id="password" appInputFieldAnimation>Password:
+    <input [(ngModel)]="user.password" placeholder="Blu3meth123" type="password">
+  </label>
+  <label id="country" appInputFieldAnimation>Country:
+    <input [(ngModel)]="user.country" placeholder="New Mexico">
+  </label>
+  <label id="zipcode" appInputFieldAnimation>Zip code:
+    <input [(ngModel)]="user.zipcode" placeholder="87101">
+  </label>
+  <label id="city" appInputFieldAnimation>City:
+    <input [(ngModel)]="user.city" placeholder="Albuquerque">
+  </label>
+  <label id="addr" appInputFieldAnimation>Address:
+    <input [(ngModel)]="user.addr" placeholder="4th Los Ranchos ST">
+  </label>
+  <button (click)="register()"><span>Register</span></button>
+</div>
