@@ -27,7 +27,7 @@
   <div id="categories">
     <span *ngFor="let category of categories">
       <a [routerLink]="['/products']" [queryParams]="{category: category}">
-        <img src="../../assets/{{category}}.png"><br>
+        <img src="../../assets/category-pictures/{{category}}.png"><br>
         {{category.toString().replace("_", " ") | titlecase }}
       </a>
     </span>

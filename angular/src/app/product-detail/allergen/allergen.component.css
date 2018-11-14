@@ -1,0 +1,28 @@
+div{
+  width: 40%;
+  display: inline-block;
+  position: relative;
+  height: 32px;
+  padding: 2px;
+  margin: 2px 5% 2px 5%;
+  border-radius: 3px;
+  background-color: #d0312e;
+  font-weight: bolder;
+}
+
+div img {
+  width: 27px;
+  position: absolute;
+  left: 5px;
+  -webkit-filter: brightness(0);
+  filter: brightness(0);
+}
+
+div.not-contains {
+  background-color: transparent;
+  color: grey;
+}
+
+div.not-contains img {
+  display: none;
+}

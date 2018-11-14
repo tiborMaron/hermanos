@@ -1,10 +1,42 @@
-<div>
-  <div>Name: {{product.name}}</div>
-  <div>Description: {{product.description}}</div>
-  <div>Price: {{product.price}}</div>
-  <div>Category: {{product.category}}</div>
-  <i class="fas fa-cart-plus" (click)="addToCart(product)"></i>
+<div class="row content">
+  <div class="col col-sm-12 col-md-5">
+    <img class="product-picture" src="../../assets/product-pictures/product{{product.id}}.jpg">
+  </div>
+  <div class="col col-sm-12 col-md-7 product-details">
+    <div class="product-detail product-name">{{product.name}}</div>
+    <div class="product-detail product-description">{{product.description}}</div>
+    <div class="row product-detail allergens-calories">
+      <div class="col col-4">
+        <div class="product-allergens-title">
+          <div>
+            Allergens:
+          </div>
+        </div>
+        <div class="product-calories">
+          <div>
+            Calories:<br>
+            <span class="cal">1000 cal</span>
+          </div>
+        </div>
+      </div>
+      <div class="col col-8 product-allergens">
+          <app-allergen *ngFor="let allergen of allergens" [allergen]="allergen"></app-allergen>
+      </div>
+    </div>
+  </div>
+  <div class="price-cart">
+    <span class="product-price">{{product.price | currency}}</span>
+    <div class="add-to-card-edit">
+      <button (click)="decreaseAmount()"><i class="fas fa-minus"></i></button>
+      <span class="amount">{{ amount }}</span>
+      <button (click)="increaseAmount()"><i class="fas fa-plus"></i></button>
+      <span class="total-price">Total: {{ amount * product.price | currency}}</span>
+      <button><i class="fas fa-cart-plus" (click)="addToCart(product)"></i></button>
+    </div>
+  </div>
 </div>
+
+<app-related-products [relatedProductsIndexes]="relatedProducts"></app-related-products>
 
 <div id="animate">
 </div>

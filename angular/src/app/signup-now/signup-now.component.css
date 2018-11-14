@@ -1,0 +1,31 @@
+a {
+  z-index: 3;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 5px 10px;
+}
+
+img {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  -webkit-animation-name: size;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: size;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes size {
+  0%   {width: 200px; height: 100px}
+  50%   {width: 220px; height: 110px}
+  100% {width: 200px; height: 100px}
+}
+
+@keyframes size {
+  0%   {width: 200px; height: 100px}
+  50%   {width: 220px; height: 110px}
+  100% {width: 200px; height: 100px}
+}
