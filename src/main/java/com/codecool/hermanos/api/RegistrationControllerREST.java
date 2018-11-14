@@ -1,7 +1,7 @@
-package com.codecool.hermanos.controller;
+package com.codecool.hermanos.api;
 
-import com.codecool.hermanos.dao.DaoAddress;
-import com.codecool.hermanos.dao.DaoUsers;
+import com.codecool.hermanos.repository.DaoAddress;
+import com.codecool.hermanos.repository.DaoUsers;
 import com.codecool.hermanos.model.Address;
 import com.codecool.hermanos.model.Users;
 
@@ -9,29 +9,36 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import javax.servlet.http.HttpServlet;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public class RegistrationController extends HttpServlet {
+@RestController
+@CrossOrigin
+public class RegistrationControllerREST {
 
     private DaoUsers daoUsers;
     private DaoAddress daoAddress;
 
-    public RegistrationController(DaoUsers daoUsers, DaoAddress daoAddress) {
+    public RegistrationControllerREST(DaoUsers daoUsers, DaoAddress daoAddress) {
         this.daoUsers = daoUsers;
         this.daoAddress = daoAddress;
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public void register(HttpServletRequest request) throws IOException {
 
         // Parse request
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, String>>(){}.getType();
+        Type type = new TypeToken<Map<String, String>>() {
+        }.getType();
         Map<String, String> credentials = gson.fromJson(request.getReader(), type);
 
         // Create address
@@ -41,7 +48,7 @@ public class RegistrationController extends HttpServlet {
         String addr = credentials.get("addr");
 
         Address address = new Address(country, zipcode, city, addr);
-        daoAddress.addNewAddress(address);
+        daoAddress.save(address);
         System.out.println("New address added. " + city + " " + addr);
 
         // Create user
@@ -50,9 +57,7 @@ public class RegistrationController extends HttpServlet {
         String password = credentials.get("password");
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
-        Users newUser = new Users(name, email, hashedPassword, address);
-        daoUsers.addNewUser(newUser);
+        daoUsers.save(new Users(name, email, hashedPassword, address));
         System.out.println("New user added. Name: " + name + " E-mail: " + email);
     }
-
 }
